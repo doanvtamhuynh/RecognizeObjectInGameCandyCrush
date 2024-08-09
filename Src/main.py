@@ -63,7 +63,7 @@ while True:
 
             #Vẽ đường viền và ghi thông tin
             cv2.drawContours(frame, [cnt], 0, (0, 0, 255), 3)
-            cv2.putText(frame, "Red", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 1)
+            cv2.putText(frame, f"Red:{x}:{y}", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
     for cnt in contours_green:
         area = cv2.contourArea(cnt)
@@ -73,7 +73,7 @@ while True:
             y = approx.ravel()[1]
 
             cv2.drawContours(frame, [cnt], 0, (0, 255, 0), 3)
-            cv2.putText(frame, "Green", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 1)
+            cv2.putText(frame, f"Green:{x}:{y}", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
     for cnt in contours_blue:
         area = cv2.contourArea(cnt)
@@ -83,7 +83,7 @@ while True:
             y = approx.ravel()[1]
 
             cv2.drawContours(frame, [cnt], 0, (255, 0, 0), 3)
-            cv2.putText(frame, "Blue", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 1)
+            cv2.putText(frame, f"Blue:{x}:{y}", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
 
     for cnt in contours_yellow:
         area = cv2.contourArea(cnt)
@@ -93,7 +93,7 @@ while True:
             y = approx.ravel()[1]
 
             cv2.drawContours(frame, [cnt], 0, (0, 255, 255), 3)
-            cv2.putText(frame, "Yellow", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 1)
+            cv2.putText(frame, f"Yellow:{x}:{y}", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2)
 
     for cnt in contours_orange:
         area = cv2.contourArea(cnt)
@@ -103,7 +103,7 @@ while True:
             y = approx.ravel()[1]
 
             cv2.drawContours(frame, [cnt], 0, (0, 165, 255), 3)
-            cv2.putText(frame, "Orange", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 165, 255), 1)
+            cv2.putText(frame, f"Orange:{x}:{y}", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 165, 255), 2)
 
     for cnt in contours_purple:
         area = cv2.contourArea(cnt)
@@ -112,9 +112,9 @@ while True:
             x = approx.ravel()[0]
             y = approx.ravel()[1]
 
+            #Vẽ viền và in ra màu của object
             cv2.drawContours(frame, [cnt], 0, (255, 0, 255), 3)
-            cv2.putText(frame, "Purple", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 255), 1)
-
+            cv2.putText(frame, f"Purple:{x}:{y}", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 255), 2)
 
 
 
